@@ -11,7 +11,7 @@ from watchdog.events import PatternMatchingEventHandler
 
 
 class MyHandler(PatternMatchingEventHandler):
-    patterns = ["*.txt", "*.py"]
+    patterns = ["*.txt", "*.py", "*.md", "*.jpg", "*.png"]
 
     def process(self, event):
         """

@@ -9,5 +9,12 @@ This repository describes how to use Watchdog with Home-Assistant (HA).
 
 Simple! Lets get started.
 
+### Install Watchdog
+You need to ssh into your HASS environment then `pip install watchdog`. To check that everything is installed and ready, run the command line utility help command with `watchmedo --help`. If he help message pops up you are OK.
+
 ### Python script
-I slightly modified the following script from the Watchdog [Quickstart](https://pythonhosted.org/watchdog/quickstart.html#quickstart) example. I added logging to a text file, and commented out the date-time string as I'm not interested in exact timings and HA will display the approximate time of events.
+I modified a couple of scripts I found online to create the `hass_watchdog.py` script. This script can be run with or without a directory path as an argument, for example I want to watch a particular folder so I run `python hass_watchdog.py /Users/robincole/Documents/test_dir`. Events detected by Watchdog are both printed to the terminal, and written to the `data.json` text file. An example of the contents of this text file are shown below:
+```json
+{"event": "deleted", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
+{"event": "created", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
+```

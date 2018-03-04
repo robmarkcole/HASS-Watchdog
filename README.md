@@ -25,3 +25,13 @@ Once I start creating/modifying files in the `www` folder, Watchdog starts popul
 <p align="center">
 <img src="https://github.com/robmarkcole/HASS-Watchdog/blob/master/images/data_json.png" width="700">
 </p>
+
+### Home-Assistant sensor
+I now use a file sensor to display the most recent event:
+```yaml
+sensor:
+  - platform: file
+    name: data_json
+    file_path: /Users/robincole/.homeassistant/www/data.json
+    value_template: '{{ value_json.event + ": " + value_json.file }}'
+```

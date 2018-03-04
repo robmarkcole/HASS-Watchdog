@@ -13,15 +13,15 @@ Simple! Lets get started.
 You need to ssh into your HASS environment then `pip install watchdog`. To check that everything is installed and ready, run the command line utility help command with `watchmedo --help`. If he help message pops up you are OK.
 
 ### Python script
-I modified a couple of scripts I found online to create the `hass_watchdog.py` script. This script can be run with or without a directory path as an argument, for example I want to watch a particular folder so I run `python hass_watchdog.py /Users/robincole/Documents/test_dir`. Events detected by Watchdog are both printed to the terminal, and written to the `data.json` text file. An example of the contents of this text file are shown below:
-```json
-{"event": "deleted", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
-{"event": "created", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
-```
-I've decided to place `hass_watchdog.py` in the `www` folder of my Home-assistant route directory so I can easily view the `data.json` file from the HA web GUI if I need to. I then created the following shell command to start the script:
+I modified a couple of scripts I found online to create the `hass_watchdog.py` script. Via SSH this script can be run with or without a directory path as an argument. However HA is a bit picky about file paths (owing to running in a venv), so when using a shell command to start the script from within HA, you need to pass the absolue path of the directory you want Watchdog to watch. Events detected by Watchdog are written to a `data.json` text file. I've decided to place `hass_watchdog.py` in the `www` folder of my Home-assistant directory so I can easily view the `data.json` file from the HA web GUI if I want to. I created the following shell command to start the script from within HA using the Service tool:
+
 ```yaml
 shell_command:
   watchdog: python ~/.homeassistant/www/hass_watchdog.py /Users/robincole/.homeassistant/www
-
 ```
-Note that HA is a bit picky about file paths, so I am passing the absolute path for Watchdog to watch.
+
+Once I start creating/modifying files in the `www` folder, Watchdog starts populating `data.json`. The view of that file via the HA web GUI is shown below.
+
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-Watchdog/blob/master/images/data_json.png" width="700">
+</p>

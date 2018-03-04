@@ -20,20 +20,26 @@ shell_command:
   watchdog: python ~/.homeassistant/www/hass_watchdog.py /Users/robincole/.homeassistant/www
 ```
 
-Once I start creating/modifying files in the `www` folder, Watchdog starts populating `data.json`. The view of that file via the HA web GUI is shown below.
+Once I start creating/modifying files in the `www` folder, Watchdog starts populating `data.json`. The view of that file via the HA web GUI is shown below (I've got the code for the ipanel below).
 
 <p align="center">
 <img src="https://github.com/robmarkcole/HASS-Watchdog/blob/master/images/data_json.png" width="700">
 </p>
 
 ### Home-Assistant sensor
-I now use a file sensor to display the most recent event:
+I now use a file sensor to display the most recent event (you may want to experiment with scan_interval):
 ```yaml
 sensor:
   - platform: file
+    scan_interval: 1
     name: data_json
     file_path: /Users/robincole/.homeassistant/www/data.json
     value_template: '{{ value_json.event + ": " + value_json.file }}'
+
+panel_iframe:
+  data_json:
+    title: 'Watchdog'
+    url: 'http://localhost:8123/local/data.json'
 ```
 
 The final product is shown below:

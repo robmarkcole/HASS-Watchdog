@@ -18,3 +18,8 @@ I modified a couple of scripts I found online to create the `hass_watchdog.py` s
 {"event": "deleted", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
 {"event": "created", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
 ```
+I've decided to place `hass_watchdog.py` in the `www` folder of my Home-assistant route directory so I can easily view the `data.json` file from the HA web GUI if I need to. I then created the following shell command to start the script:
+```yaml
+shell_command:
+  start_watchdog: 'python /Users/robincole/.homeassistant/www/hass_watchdog.py'
+```

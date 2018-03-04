@@ -21,5 +21,7 @@ I modified a couple of scripts I found online to create the `hass_watchdog.py` s
 I've decided to place `hass_watchdog.py` in the `www` folder of my Home-assistant route directory so I can easily view the `data.json` file from the HA web GUI if I need to. I then created the following shell command to start the script:
 ```yaml
 shell_command:
-  start_watchdog: 'python /Users/robincole/.homeassistant/www/hass_watchdog.py'
+  watchdog: python ~/.homeassistant/www/hass_watchdog.py /Users/robincole/.homeassistant/www
+
 ```
+Note that HA is a bit picky about file paths, so I am passing the absolute path for Watchdog to watch.

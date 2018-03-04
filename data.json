@@ -1,4 +1,9 @@
-{"event": "deleted", "full_path": "/Users/robincole/Documents/test_dir/test copy 3.txt", "file": "test copy 3.txt"}
-{"event": "deleted", "full_path": "/Users/robincole/Documents/test_dir/test copy 2.txt", "file": "test copy 2.txt"}
-{"event": "deleted", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
-{"event": "created", "full_path": "/Users/robincole/Documents/test_dir/test copy.txt", "file": "test copy.txt"}
+{"time": "2018-03-04 11:42", "event": "created", "full_path": "/Users/robincole/.homeassistant/www/dog copy.jpg", "file": "dog copy.jpg"}
+{"time": "2018-03-04 11:42", "event": "created", "full_path": "/Users/robincole/.homeassistant/www/dog copy.jpg", "file": "dog copy.jpg"}
+{"event": "created", "full_path": "/Users/robincole/.homeassistant/www/dog copy.jpg", "file": "dog copy.jpg"}
+{"time": "2018-03-04 11:42", "event": "modified", "full_path": "/Users/robincole/.homeassistant/www/data_copy.txt", "file": "data_copy.txt"}
+{"time": "2018-03-04 11:42", "event": "modified", "full_path": "/Users/robincole/.homeassistant/www/data_copy.txt", "file": "data_copy.txt"}
+{"event": "modified", "full_path": "/Users/robincole/.homeassistant/www/data_copy.txt", "file": "data_copy.txt"}
+{"event": "modified", "full_path": "/Users/robincole/.homeassistant/www/hass_watchdog.py", "file": "hass_watchdog.py"}
+{"time": "2018-03-04 11:44", "event": "modified", "full_path": "/Users/robincole/.homeassistant/www/hass_watchdog.py", "file": "hass_watchdog.py"}
+{"time": "2018-03-04 11:44", "event": "modified", "full_path": "/Users/robincole/.homeassistant/www/hass_watchdog.py", "file": "hass_watchdog.py"}

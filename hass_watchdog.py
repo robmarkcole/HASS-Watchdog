@@ -24,12 +24,13 @@ class MyHandler(PatternMatchingEventHandler):
         """
         # the file will be processed there
         data = {
+            "time": time.strftime("%Y-%m-%d %H:%M"),
             "event": event.event_type,
             "full_path": event.src_path,
             "file": os.path.split(event.src_path)[-1]
         }
         print(json.dumps(data))
-        with open('data.json', 'a') as f:
+        with open('/Users/robincole/.homeassistant/www/data.json', 'a') as f:
             f.write('{}\n'.format(json.dumps(data)))
 
     def on_modified(self, event):

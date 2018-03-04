@@ -29,9 +29,8 @@ class MyHandler(PatternMatchingEventHandler):
             "file": os.path.split(event.src_path)[-1]
         }
         print(json.dumps(data))
-        with open('data.json', 'w') as f:
-            #json.dump(data, f)
-            print(json.dumps(data), file=f)
+        with open('data.json', 'a') as f:
+            f.write('{}\n'.format(json.dumps(data)))
 
     def on_modified(self, event):
         self.process(event)

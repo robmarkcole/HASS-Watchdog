@@ -20,7 +20,7 @@ shell_command:
   watchdog: python ~/.homeassistant/www/hass_watchdog.py /Users/robincole/.homeassistant/www
 ```
 
-Once I start creating/modifying files in the `www` folder, Watchdog starts populating `data.json`. The view of that file via the HA web GUI is shown below (I've got the code for the ipanel below).
+Once I start creating/modifying files in the `www` folder, Watchdog starts populating `data.json`. The view of that file via the HA web GUI is shown below (I've got the code for the panel_iframe below).
 
 <p align="center">
 <img src="https://github.com/robmarkcole/HASS-Watchdog/blob/master/images/data_json.png" width="900">
@@ -51,3 +51,6 @@ The final product is shown below:
 
 ### Summary
 We have seen how Home-Assistant can be configured to run Watchdog and display event data in the front end. This is a stepping stone towards a true integration of Watchdog with HA.
+
+### Caveats
+I've noticed that the panel_iframe can take up to a couple of minutes to update. However the sensor updates immediately.

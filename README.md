@@ -35,3 +35,12 @@ sensor:
     file_path: /Users/robincole/.homeassistant/www/data.json
     value_template: '{{ value_json.event + ": " + value_json.file }}'
 ```
+
+The final product is shown below:
+
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-Watchdog/blob/master/images/HA_sensor.png" width="400">
+</p>
+
+### Summary
+We have seen how Home-Assistant can be configured to run Watchdog and display event data in the front end. This is a stepping stone towards a true integration of Watchdog with HA.
